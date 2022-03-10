@@ -1,0 +1,25 @@
+<dx-button text="Add Self Data" (onClick)="addSelfNode()">
+</dx-button>
+
+<dx-button text="Add Relative,acquaintance,Bhaiband Data" (onClick)="addRelativesNode()">
+</dx-button>
+
+
+<dx-popup [width]="1000" [height]="580" [showTitle]="true" title="Add Node Data" [dragEnabled]="false"
+    [closeOnOutsideClick]="true" [showCloseButton]="true" container=".dx-viewport" [(visible)]="popupVisible">
+
+    <form [formGroup]="selfNodeForm" (ngSubmit)="onSubmit()">
+        <div class="dx-field">
+            <div class="dx-field-label">Enter Your Name</div>
+            <div class="dx-field-value">
+                <dx-text-box placeholder="Enter full name here..." formControlName="fullName"></dx-text-box>
+            </div>
+        </div>
+
+        <dx-button text="Submit" [useSubmitBehavior]="true">
+        </dx-button>
+
+    </form>
+
+
+</dx-popup>

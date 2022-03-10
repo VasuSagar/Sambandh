@@ -1,0 +1,38 @@
+<form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+
+    <div class="dx-field">
+        <div class="dx-field-label">Enter Your Email</div>
+        <div class="dx-field-value">
+            <dx-text-box formControlName="email">
+                <dx-validator>
+                    <dxi-validation-rule
+                      type="required"
+                      message="Email is required"
+                    ></dxi-validation-rule>
+                    <dxi-validation-rule
+                      type="email"
+                      message="Email is invalid"
+                    ></dxi-validation-rule>
+                  </dx-validator>
+            </dx-text-box>
+        </div>
+    </div>
+
+    <div class="dx-field">
+        <div class="dx-field-label">Enter Your Password</div>
+        <div class="dx-field-value">
+            <dx-text-box mode="password" formControlName="password">
+                <dx-validator>
+                    <dxi-validation-rule
+                      type="required"
+                      message="Password is required"
+                    ></dxi-validation-rule>
+                  </dx-validator>
+            </dx-text-box>
+        </div>
+    </div>
+
+    <dx-button text="Submit"  [useSubmitBehavior]="true">
+    </dx-button>
+
+</form>
